@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@metamask/eth-sig-util": "^8.2.0",
+    "crypto-js": "^4.2.0",
+    "eth-sig-util": "^3.0.1"
+  }
+}

@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical Records DApp - Vibrant Healthcare Tech Design System */
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 174 72% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 15%;
+    --ring: 174 72% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Medical Theme Colors */
+    --medical-teal: 174 72% 50%;
+    --medical-teal-glow: 174 72% 60%;
+    --medical-emerald: 142 71% 45%;
+    --medical-emerald-glow: 142 71% 55%;
+    --medical-blue: 217 91% 60%;
+    --medical-blue-glow: 217 91% 70%;
+    --medical-purple: 262 83% 58%;
+    --medical-purple-glow: 262 83% 68%;
+
+    /* Glass Effects */
+    --glass-bg: 222 47% 10% / 0.6;
+    --glass-border: 217 33% 25% / 0.5;
+    --glass-highlight: 210 40% 98% / 0.05;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 50%), hsl(174 72% 40%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 35%));
+    --gradient-info: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(262 83% 58%), hsl(262 83% 48%));
+    --gradient-dark: linear-gradient(180deg, hsl(222 47% 8%), hsl(222 47% 4%));
+
+    /* Shadows */
+    --shadow-glow-teal: 0 0 30px hsl(174 72% 50% / 0.3);
+    --shadow-glow-emerald: 0 0 30px hsl(142 71% 45% / 0.3);
+    --shadow-glow-blue: 0 0 30px hsl(217 91% 60% / 0.3);
+    --shadow-glow-purple: 0 0 30px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 4px 24px hsl(222 47% 2% / 0.5);
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 174 72% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 174 72% 50%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 15%;
+    --ring: 174 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--gradient-dark);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-highlight {
+    @apply glass-card;
+    background: linear-gradient(135deg, hsl(var(--glass-highlight)), transparent);
+  }
+
+  .glow-teal {
+    box-shadow: var(--shadow-glow-teal);
+  }
+
+  .glow-emerald {
+    box-shadow: var(--shadow-glow-emerald);
+  }
+
+  .glow-blue {
+    box-shadow: var(--shadow-glow-blue);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+
+  .gradient-text-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--medical-teal)), hsl(var(--medical-teal-glow)));
+  }
+
+  .gradient-text-emerald {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--medical-emerald)), hsl(var(--medical-emerald-glow)));
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
